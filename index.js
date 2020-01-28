@@ -62,6 +62,8 @@ function printOutput({ added, removed, updated }) {
   }
 }
 
-parseLockfile(process.stdin)
-  .then(sortResolved)
-  .then(printOutput);
+module.exports = function run() {
+  parseLockfile(process.stdin)
+    .then(sortResolved)
+    .then(printOutput);
+};

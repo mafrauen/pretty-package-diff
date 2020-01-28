@@ -1,7 +1,8 @@
 {
   "name": "pretty-package-diff",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Pretty prints dependency version change information from a yarn.lock file",
+  "bin": "./cli.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
