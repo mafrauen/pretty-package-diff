@@ -1,19 +1,23 @@
 {
   "name": "pretty-package-diff",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Pretty prints dependency version change information from a yarn.lock file",
   "bin": "./cli.js",
-  "main": "index.js",
+  "exports": "./index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Bitbucket <dev@bitbucket.org>",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^3.0.0",
-    "semver": "^7.1.1"
+    "chalk": "^5.0.0",
+    "semver": "^7.5.4"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "standard": "*"
   }
 }
