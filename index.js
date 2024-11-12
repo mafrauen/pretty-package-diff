@@ -1,6 +1,6 @@
-import { parseLockfile, sortResolved } from './yarn.js'
+import { parseLockfile, sortResolved } from './yarn.js';
 
 export function run () {
   return parseLockfile(process.stdin)
-    .then(sortResolved)
+    .then(sortResolved);
 }
