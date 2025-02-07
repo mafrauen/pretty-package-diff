@@ -4,8 +4,9 @@ import semver from 'semver';
 // e.g. "@atlaskit/calendar@npm:^15.0.0"
 const rootDependencyRe = /^(.+)@(npm:)?(.+)$/;
 // regex to match the actual version number used
-// e.g.   version: 1.0.5
-const versionRe = /^[+-]?\s{2,3}version:? "?(.*)"?/;
+// e.g. (yarn v4)   version: 1.0.5
+// e.g. (yarn v1)   version "1.0.5"
+const versionRe = /^[+-]?\s{2,3}version:? "?([^"]*)"?/;
 
 let currentDep;
 let added = [];
