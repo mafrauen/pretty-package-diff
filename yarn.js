@@ -1,3 +1,4 @@
+import { createInterface } from 'node:readline';
 import semver from 'semver';
 
 // regex for each top level dependency of the lock file
@@ -66,17 +67,15 @@ function resolveVersion (version) {
 //     ...
 //   }
 // }
-export async function parseLockfile (readable) {
-  readable.setEncoding('utf8');
-  for await (const chunk of readable) {
-    for (const line of chunk.split('\n')) {
-      if (line.match(/^[+-]\S.*:$/)) {
-        storeUnresolved(line);
-      }
-      const versionMatch = line.match(versionRe);
-      if (versionMatch && currentDep) {
-        resolveVersion(versionMatch[1]);
-      }
+export async function parseLockfile (stdin) {
+  const readline = createInterface({ input: stdin });
+  for await (const line of readline) {
+    if (line.match(/^[+-]\S.*:$/)) {
+      storeUnresolved(line);
+    }
+    const versionMatch = line.match(versionRe);
+    if (versionMatch && currentDep) {
+      resolveVersion(versionMatch[1]);
     }
   }
   return resolved;

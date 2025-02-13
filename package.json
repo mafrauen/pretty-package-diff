@@ -1,6 +1,6 @@
 {
   "name": "pretty-package-diff",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Pretty prints dependency version change information from a yarn.lock file",
   "bin": "./cli.js",
   "exports": "./index.js",
